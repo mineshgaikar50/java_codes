@@ -1,0 +1,37 @@
+import java.util.*;
+
+class Accio {
+    public void duplicates(int[] arr) {
+        Set<Integer> seen = new HashSet<>();
+        boolean hasDuplicates = false;
+        
+        // Check for duplicates
+        for (int element : arr) {
+            if (seen.contains(element)) {
+                hasDuplicates = true;
+                break;
+            }
+            seen.add(element);
+        }
+        
+        // Output the result
+        if (hasDuplicates) {
+            System.out.println("true");
+        } else {
+            System.out.println("false");
+        }
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int[] arr = new int[n];
+        for (int i = 0; i < n; ++i)
+            arr[i] = sc.nextInt();
+        Accio Obj = new Accio();
+        Obj.duplicates(arr);
+        sc.close();
+    }
+}
